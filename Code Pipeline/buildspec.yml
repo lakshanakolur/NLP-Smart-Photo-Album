@@ -1,0 +1,14 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      python: 3.9
+  build:
+    commands:
+      - sam build
+      - export BUCKET=photoalbumbucket1
+      - sam package --s3-bucket $BUCKET --output-template-file outputtemplate.yml
+artifacts:
+  files:
+    - template.yml
+    - outputtemplate.yml
