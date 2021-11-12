@@ -10,6 +10,7 @@ logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
 
 def lambda_handler(event, context):
+    print("Hello from local")
     logger.debug('event')
     logger.debug(event)
     
